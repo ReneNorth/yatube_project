@@ -23,3 +23,11 @@ def group_posts(request, pk):
     return HttpResponse(f'This is a post №{pk}')
 
 # Create your views here.
+
+def group_list(request):
+    template = 'posts/group_list.html'
+    text = 'Здесь будет информация о группах проекта Yatube'
+    context = {
+        'text': text,
+    }
+    return render(request, template, context)
