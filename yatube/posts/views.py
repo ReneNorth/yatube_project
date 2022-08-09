@@ -9,7 +9,12 @@ from django.http import HttpResponse
 
 # Главная страница
 def index(request):
-    return HttpResponse('Главная страница')
+    template = 'posts/index.html'
+    text = 'Это главная страница проекта Yatube'
+    context = {
+        'text': text,
+    }
+    return render(request, template)
 
 # Страница с информацией об одном сорте мороженого;
 # view-функция принимает параметр pk из path()
