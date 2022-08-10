@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-        {% block content %}    
+      {% block content %}    
         <div class="container py-5">
           <h1> {{ text }} </h1>
           <p>
@@ -19,12 +19,15 @@
                   </li>
                 </ul>      
                 <p>
-                    {{ post.text }}
+                  {{ post.text }}
                 </p>
+                {# {% if post.group %} #}  
+                {#  <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a> #}
+                {# {% endif %} #}
                <a href="">все записи группы</a>
                 {% if not forloop.last %} <hr> {% endif %}
             {% endfor %}
             </article>
             <!-- под последним постом нет линии --> 
-          {% endblock %}
+        {% endblock %}
       </div>  
