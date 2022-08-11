@@ -11,7 +11,7 @@ from django.http import HttpResponse
 
 # Главная страница
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.order_by('-pub_date')[:10]
     # другие способы получить посты (а как делать пагинацию?)
     # posts = Post.objects.order_by('-pub_date')[:10]
     # Post.objects.get(id=1)
